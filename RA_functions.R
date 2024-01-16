@@ -42,7 +42,7 @@ RA_assoc_indep <- function(g, y, z=NULL, HWE=F){
 		if(any(is.na(z))){
 			stop('Covariates contain NAs')
 		}
-		if(class(z)=='numeric'){
+		if(class(z)[1] =='numeric'){
 			z <- matrix(z, ncol=1)
 		}
 		z_var <- apply(z, 2, var)
@@ -53,7 +53,7 @@ RA_assoc_indep <- function(g, y, z=NULL, HWE=F){
 	if(var(g) <= 0){
 		stop('variance of G is 0')
 	}
-	if(class(y) == 'numeric'){
+	if(class(y)[1] == 'numeric'){
 		y <- matrix(y, ncol=1)
 	}
 	y_var <- apply(y, 2, var)
